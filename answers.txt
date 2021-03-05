@@ -1,0 +1,35 @@
+1. A Unit Test ensures a part of code is working as expected. One of its features is that does not depend of any other part of code nor dependency.
+
+A Integration Test works to check if all code is working as expected. Here you can test parts of code with its dependencies.
+
+Acceptance Test is use to verify that all client's request are solved with the code.
+
+2. SCRUM is an agile work method focused on fast development and delivery. It has some important actors like:
+	- Project Owner: It is the person who has the contact with the client and know what to do and priorities of each system's feature. 
+	- Development Team: Are people who creates what is need. It can be programmers, designers, etc.
+	- SCRUM Master: It is the SCRUM expert who take care of the scrum cycle and watch all SCRUM rules are followed
+
+And some important meets:
+	- Daily: It is the meet where all team's members say all what they did, what they going to do and if they have a stopper.
+	- Sprint Planning: In this meet is defined what is going to be done in the sprint
+	- Sprint Review: Here the team talks about everithing they made in the sprint and, if there is, say some complaints
+
+And components:
+	- Sprint: It is a period of time where activities are done.
+
+3. It is a programming practice where tests are writting first than implementations. This works to avoid writte unnecesary code and all functionality needed it's what will be writte. It helps to keep aour code testable and, if something is modified in it, runnign tests will know that all work as expected.
+
+4. These two concepts help to keep clean, tested and updated code through all team's memebers code and allows to run some instructions when new code is pushed and/or merge into an specific branch.
+
+5. A monolithic application is when you have a entiry system in one place. This is not divided nor depends of others services out of the app. By the other hand, an app based in microservices is when this consumes services or functionality which has different source code.
+
+6.
+
+7. 
+
+8. 
+	- VueJS: it does not depend on a big company as React or Angular. It is support by its own community and the community decides which path the project will take.
+	- Golang: I feel Google gives a step towards giving programming languages an apex to reach. Giving a really complete standard library and a fast API Rest development is a good option to create network systems now a days.
+	- Linux Kernel: have the chance to see the source code of the most side-server OS use in the world is something awesome.
+
+9. 
