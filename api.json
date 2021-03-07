@@ -1,4 +1,26 @@
 {
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a simple API",
+        "version": "1.0.0",
+        "title": "Simple Inventory API",
+        "contact": {
+            "email": "you@your-company.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        }
+    },
+    "tags": [{
+            "name": "admins",
+            "description": "Secured Admin-only calls"
+        },
+        {
+            "name": "developers",
+            "description": "Operations available to regular developers"
+        }
+    ],
     "paths": {
         "/actor/{actorId}": {
             "get": {
@@ -360,7 +382,7 @@
                 }
             }
         },
-        "/Transmition/{TransmitionId}": {
+        "/transmition/{TransmitionId}": {
             "get": {
                 "summary": "Search a Transmition",
                 "description": "By passing in the appropriate options, you can search for\na Transmition\n",
@@ -420,7 +442,7 @@
                 }
             }
         },
-        "/Transmition": {
+        "/transmition": {
             "post": {
                 "summary": "adds an Transmition",
                 "description": "Adds an Transmition to the database",
@@ -446,6 +468,96 @@
                     },
                     "409": {
                         "description": "an existing Transmition already exists"
+                    }
+                }
+            }
+        },
+        "/serieActor/{serieActorId}": {
+            "get": {
+                "summary": "Search an serieActor",
+                "description": "By passing in the appropriate options, you can search for\na serieActor\n",
+                "operationId": "searchserieActor",
+                "parameters": [{
+                    "name": "serieActorId",
+                    "in": "path",
+                    "description": "serieActor Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "serieActor has been registred successfully"
+                    },
+                    "500": {
+                        "description": "An error occured"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update an serieActor",
+                "description": "Update info from the serieActor that has the serieActorId",
+                "parameters": [{
+                    "name": "serieActorId",
+                    "in": "path",
+                    "description": "serieActor Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "serieActor has been updated successfully"
+                    },
+                    "500": {
+                        "description": "An error has occured"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete an serieActor",
+                "description": "Deletes an serieActor with the given serieActorId",
+                "parameters": [{
+                    "name": "serieActorId",
+                    "in": "path",
+                    "description": "serieActor Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "serieActor deleted"
+                    },
+                    "400": {
+                        "description": "serieActor does not exists"
+                    }
+                }
+            }
+        },
+        "/serieActor": {
+            "post": {
+                "summary": "adds an serieActor",
+                "description": "Adds an serieActor to the database",
+                "operationId": "addserieActor",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "serieActor",
+                    "description": "Inventory item to add",
+                    "required": false,
+                    "schema": {
+                        "$ref": "#/definitions/SerieActor"
+                    }
+                }],
+                "responses": {
+                    "201": {
+                        "description": "serieActor created"
+                    },
+                    "400": {
+                        "description": "invalid input, object invalid"
+                    },
+                    "409": {
+                        "description": "an existing serieActor already exists"
                     }
                 }
             }
@@ -533,6 +645,19 @@
                     "type": "string",
                     "format": "date-time",
                     "example": "2016-08-29T09:12:33.001+0000"
+                }
+            }
+        },
+        "SerieActor": {
+            "type": "object",
+            "properties": {
+                "id_serie": {
+                    "type": "integer",
+                    "example": 78
+                },
+                "id_actor": {
+                    "type": "integer",
+                    "example": 67
                 }
             }
         }
