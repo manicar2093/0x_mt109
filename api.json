@@ -1,0 +1,540 @@
+{
+    "paths": {
+        "/actor/{actorId}": {
+            "get": {
+                "summary": "Search an Actor",
+                "description": "By passing in the appropriate options, you can search for\nan actor\n",
+                "operationId": "searchActor",
+                "parameters": [{
+                    "name": "actorId",
+                    "in": "path",
+                    "description": "Actor Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Actor has been registred successfully"
+                    },
+                    "500": {
+                        "description": "An error occured"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update an Actor",
+                "description": "Update info from the actor that has the actorId",
+                "parameters": [{
+                    "name": "actorId",
+                    "in": "path",
+                    "description": "Actor Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Actor has been updated successfully"
+                    },
+                    "500": {
+                        "description": "An error has occured"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete an actor",
+                "description": "Deletes an Actor with the given actorId",
+                "parameters": [{
+                    "name": "actorId",
+                    "in": "path",
+                    "description": "Actor Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Actor deleted"
+                    },
+                    "400": {
+                        "description": "Actor does not exists"
+                    }
+                }
+            }
+        },
+        "/actor": {
+            "post": {
+                "summary": "adds an actor",
+                "description": "Adds an actor to the database",
+                "operationId": "addActor",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "actor",
+                    "description": "Inventory item to add",
+                    "required": false,
+                    "schema": {
+                        "$ref": "#/definitions/Actor"
+                    }
+                }],
+                "responses": {
+                    "201": {
+                        "description": "Actor created"
+                    },
+                    "400": {
+                        "description": "invalid input, object invalid"
+                    },
+                    "409": {
+                        "description": "an existing actor already exists"
+                    }
+                }
+            }
+        },
+        "/director/{directorId}": {
+            "get": {
+                "summary": "Search a director",
+                "description": "By passing in the appropriate options, you can search for\na director\n",
+                "operationId": "searchDirector",
+                "parameters": [{
+                    "name": "directorId",
+                    "in": "path",
+                    "description": "director Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "director has been registred successfully"
+                    },
+                    "500": {
+                        "description": "An error occured"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update an director",
+                "description": "Update info from the director that has the directorId",
+                "parameters": [{
+                    "name": "directorId",
+                    "in": "path",
+                    "description": "director Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "director has been updated successfully"
+                    },
+                    "500": {
+                        "description": "An error has occured"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete an director",
+                "description": "Deletes an director with the given directorId",
+                "parameters": [{
+                    "name": "directorId",
+                    "in": "path",
+                    "description": "director Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "director deleted"
+                    },
+                    "400": {
+                        "description": "director does not exists"
+                    }
+                }
+            }
+        },
+        "/director": {
+            "post": {
+                "summary": "adds an director",
+                "description": "Adds an director to the database",
+                "operationId": "adddirector",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "director",
+                    "description": "Inventory item to add",
+                    "required": false,
+                    "schema": {
+                        "$ref": "#/definitions/Director"
+                    }
+                }],
+                "responses": {
+                    "201": {
+                        "description": "director created"
+                    },
+                    "400": {
+                        "description": "invalid input, object invalid"
+                    },
+                    "409": {
+                        "description": "an existing director already exists"
+                    }
+                }
+            }
+        },
+        "/serie/{serieId}": {
+            "get": {
+                "summary": "Search a Serie",
+                "description": "By passing in the appropriate options, you can search for\na serie\n",
+                "operationId": "searchSerie",
+                "parameters": [{
+                    "name": "serieId",
+                    "in": "path",
+                    "description": "Serie Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Serie has been registred successfully"
+                    },
+                    "500": {
+                        "description": "An error occured"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update a Serie",
+                "description": "Update info from the sertie that has the serieId",
+                "parameters": [{
+                    "name": "serieId",
+                    "in": "path",
+                    "description": "Serie Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Serie has been updated successfully"
+                    },
+                    "500": {
+                        "description": "An error has occured"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete an serie",
+                "description": "Deletes an Serie with the given serieId",
+                "parameters": [{
+                    "name": "serieId",
+                    "in": "path",
+                    "description": "Serie Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Serie deleted"
+                    },
+                    "400": {
+                        "description": "Serie does not exists"
+                    }
+                }
+            }
+        },
+        "/serie": {
+            "post": {
+                "summary": "adds a serie",
+                "description": "Adds a serie to the database",
+                "operationId": "addSerie",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "actor",
+                    "description": "Inventory item to add",
+                    "required": false,
+                    "schema": {
+                        "$ref": "#/definitions/Serie"
+                    }
+                }],
+                "responses": {
+                    "201": {
+                        "description": "Serie created"
+                    },
+                    "400": {
+                        "description": "invalid input, object invalid"
+                    },
+                    "409": {
+                        "description": "an existing actor already exists"
+                    }
+                }
+            }
+        },
+        "/episode/{episodeId}": {
+            "get": {
+                "summary": "Search an Episode",
+                "description": "By passing in the appropriate options, you can search for\nan episode\n",
+                "operationId": "searchEpisode",
+                "parameters": [{
+                    "name": "episodeId",
+                    "in": "path",
+                    "description": "Episode Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Episode has been registred successfully"
+                    },
+                    "500": {
+                        "description": "An error occured"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update an Episode",
+                "description": "Update info from the episode that has the actorId",
+                "parameters": [{
+                    "name": "episodeId",
+                    "in": "path",
+                    "description": "Episode Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Episode has been updated successfully"
+                    },
+                    "500": {
+                        "description": "An error has occured"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete an episode",
+                "description": "Deletes an Episode with the given actorId",
+                "parameters": [{
+                    "name": "episodeId",
+                    "in": "path",
+                    "description": "Episode Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Episode deleted"
+                    },
+                    "400": {
+                        "description": "Episode does not exists"
+                    }
+                }
+            }
+        },
+        "/episode": {
+            "post": {
+                "summary": "adds an episode",
+                "description": "Adds an episode to the database",
+                "operationId": "addEpisode",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "episode",
+                    "description": "Inventory item to add",
+                    "required": false,
+                    "schema": {
+                        "$ref": "#/definitions/Episode"
+                    }
+                }],
+                "responses": {
+                    "201": {
+                        "description": "Episode created"
+                    },
+                    "400": {
+                        "description": "invalid input, object invalid"
+                    },
+                    "409": {
+                        "description": "an existing actor already exists"
+                    }
+                }
+            }
+        },
+        "/Transmition/{TransmitionId}": {
+            "get": {
+                "summary": "Search a Transmition",
+                "description": "By passing in the appropriate options, you can search for\na Transmition\n",
+                "operationId": "searchTransmition",
+                "parameters": [{
+                    "name": "TransmitionId",
+                    "in": "path",
+                    "description": "Transmition Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Transmition has been registred successfully"
+                    },
+                    "500": {
+                        "description": "An error occured"
+                    }
+                }
+            },
+            "put": {
+                "summary": "Update an Transmition",
+                "description": "Update info from the Transmition that has the TransmitionId",
+                "parameters": [{
+                    "name": "TransmitionId",
+                    "in": "path",
+                    "description": "Transmition Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Transmition has been updated successfully"
+                    },
+                    "500": {
+                        "description": "An error has occured"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "Delete an Transmition",
+                "description": "Deletes an Transmition with the given TransmitionId",
+                "parameters": [{
+                    "name": "TransmitionId",
+                    "in": "path",
+                    "description": "Transmition Id needed",
+                    "required": true,
+                    "type": "integer"
+                }],
+                "responses": {
+                    "200": {
+                        "description": "Transmition deleted"
+                    },
+                    "400": {
+                        "description": "Transmition does not exists"
+                    }
+                }
+            }
+        },
+        "/Transmition": {
+            "post": {
+                "summary": "adds an Transmition",
+                "description": "Adds an Transmition to the database",
+                "operationId": "addTransmition",
+                "consumes": [
+                    "application/json"
+                ],
+                "parameters": [{
+                    "in": "body",
+                    "name": "Transmition",
+                    "description": "Inventory item to add",
+                    "required": false,
+                    "schema": {
+                        "$ref": "#/definitions/Transmition"
+                    }
+                }],
+                "responses": {
+                    "201": {
+                        "description": "Transmition created"
+                    },
+                    "400": {
+                        "description": "invalid input, object invalid"
+                    },
+                    "409": {
+                        "description": "an existing Transmition already exists"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Actor": {
+            "type": "object",
+            "properties": {
+                "id_actor": {
+                    "type": "integer",
+                    "example": 13
+                },
+                "name": {
+                    "type": "string",
+                    "example": "Axel Jimenez"
+                },
+                "hire_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2016-08-29T09:12:33.001+0000"
+                }
+            }
+        },
+        "Serie": {
+            "type": "object",
+            "properties": {
+                "id_serie": {
+                    "type": "integer",
+                    "example": 13
+                },
+                "name": {
+                    "type": "string",
+                    "example": "IT Crowd"
+                }
+            }
+        },
+        "Episode": {
+            "type": "object",
+            "properties": {
+                "id_episode": {
+                    "type": "integer",
+                    "example": 14
+                },
+                "id_director": {
+                    "type": "integer",
+                    "example": 29
+                },
+                "id_serie": {
+                    "type": "integer",
+                    "example": 8
+                }
+            }
+        },
+        "Director": {
+            "type": "object",
+            "properties": {
+                "id_director": {
+                    "type": "integer",
+                    "example": 77
+                },
+                "name": {
+                    "type": "string",
+                    "example": "Axel Jimenez"
+                },
+                "hire_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2016-08-29T09:12:33.001+0000"
+                }
+            }
+        },
+        "Transmition": {
+            "type": "object",
+            "properties": {
+                "id_transmition": {
+                    "type": "integer",
+                    "example": 56
+                },
+                "id_episode": {
+                    "type": "integer",
+                    "example": 12
+                },
+                "transmition_date": {
+                    "type": "string",
+                    "format": "date-time",
+                    "example": "2016-08-29T09:12:33.001+0000"
+                }
+            }
+        }
+    }
+}
