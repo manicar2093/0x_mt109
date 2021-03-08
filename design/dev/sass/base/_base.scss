@@ -1,0 +1,15 @@
+html {
+    box-sizing: border-box;
+    background-color: #e3e3e3;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.label {
+    font-size: .8rem;
+    display: block;
+    margin-bottom: .7rem;
+    color: #bfbfbf;
+}

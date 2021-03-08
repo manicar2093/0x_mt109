@@ -1,0 +1,27 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: auto;
+    background-color: white;
+    justify-content: center;
+    margin: .5rem;
+    border-radius: 5px;
+
+    &_info {
+        margin: 1rem;
+        position: relative;
+        flex-grow: 1;
+        &--center {
+            vertical-align: middle;
+        }
+    }
+
+    &--onroute {
+        border-left: 8px solid blue;
+    }
+
+    &--completed {
+        border-left: 8px solid green;
+    }
+}

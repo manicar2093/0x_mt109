@@ -1,0 +1,24 @@
+.button {
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    padding: .5rem;
+    border-radius: 5px;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+
+    &--completed {
+        background-color: green;
+        color: white;
+        width: 6.3rem;
+    }
+
+    &--onroute {
+        background-color: blue;
+        color: white;
+        width: 70px;
+    }
+}
